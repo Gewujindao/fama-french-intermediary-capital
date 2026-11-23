@@ -1,0 +1,8 @@
+# Raw data files are not redistributed; download them from the original sources (see README).
+data/
+
+# R session artifacts
+.Rhistory
+.RData
+.Rproj.user/
+Rplots.pdf

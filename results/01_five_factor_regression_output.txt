@@ -1,0 +1,192 @@
+ [1] "date"       "SMALL LoBM" "ME1 BM2"    "ME1 BM3"    "ME1 BM4"   
+ [6] "SMALL HiBM" "ME2 BM1"    "ME2 BM2"    "ME2 BM3"    "ME2 BM4"   
+[11] "ME2 BM5"    "ME3 BM1"    "ME3 BM2"    "ME3 BM3"    "ME3 BM4"   
+[16] "ME3 BM5"    "ME4 BM1"    "ME4 BM2"    "ME4 BM3"    "ME4 BM4"   
+[21] "ME4 BM5"    "BIG LoBM"   "ME5 BM2"    "ME5 BM3"    "ME5 BM4"   
+[26] "BIG HiBM"   "Mkt-RF"     "SMB"        "HML"        "RMW"       
+[31] "CMA"        "RF"        
+
+Call:
+lm(formula = `SMALL LoBM` ~ `Mkt-RF` + SMB + HML + RMW + CMA, 
+    data = dt)
+
+Residuals:
+    Min      1Q  Median      3Q     Max 
+-3.6355 -0.2366  0.0023  0.2329  4.1305 
+
+Coefficients:
+             Estimate Std. Error t value Pr(>|t|)    
+(Intercept) -0.003221   0.003658  -0.881    0.378    
+`Mkt-RF`     1.037026   0.003916 264.823  < 2e-16 ***
+SMB          1.119427   0.007064 158.459  < 2e-16 ***
+HML         -0.302350   0.007620 -39.679  < 2e-16 ***
+RMW         -0.377911   0.009782 -38.633  < 2e-16 ***
+CMA          0.050949   0.012238   4.163 3.16e-05 ***
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Residual standard error: 0.4528 on 15391 degrees of freedom
+Multiple R-squared:  0.887,	Adjusted R-squared:  0.887 
+F-statistic: 2.417e+04 on 5 and 15391 DF,  p-value: < 2.2e-16
+
+
+Call:
+lm(formula = `SMALL LoBM` ~ `Mkt-RF` + SMB + HML + RMW + CMA, 
+    data = dt[which(year(dt$date) < 2000), ])
+
+Residuals:
+     Min       1Q   Median       3Q      Max 
+-2.54090 -0.19250 -0.00291  0.19252  2.64082 
+
+Coefficients:
+             Estimate Std. Error t value Pr(>|t|)    
+(Intercept) -0.001010   0.003473  -0.291    0.771    
+`Mkt-RF`     1.147833   0.005467 209.975  < 2e-16 ***
+SMB          1.206053   0.008365 144.179  < 2e-16 ***
+HML         -0.247316   0.013123 -18.845  < 2e-16 ***
+RMW         -0.171998   0.014808 -11.615  < 2e-16 ***
+CMA          0.073371   0.014915   4.919 8.84e-07 ***
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Residual standard error: 0.331 on 9186 degrees of freedom
+Multiple R-squared:  0.8959,	Adjusted R-squared:  0.8958 
+F-statistic: 1.581e+04 on 5 and 9186 DF,  p-value: < 2.2e-16
+
+
+Call:
+lm(formula = `SMALL LoBM` ~ `Mkt-RF` + SMB + HML + RMW + CMA, 
+    data = dt[which(year(dt$date) >= 2000), ])
+
+Residuals:
+    Min      1Q  Median      3Q     Max 
+-3.2881 -0.3110  0.0015  0.2979  3.9805 
+
+Coefficients:
+             Estimate Std. Error t value Pr(>|t|)    
+(Intercept) -0.011373   0.007259  -1.567 0.117227    
+`Mkt-RF`     0.963594   0.006528 147.600  < 2e-16 ***
+SMB          1.104317   0.012031  91.788  < 2e-16 ***
+HML         -0.256002   0.011092 -23.079  < 2e-16 ***
+RMW         -0.514317   0.015218 -33.797  < 2e-16 ***
+CMA          0.077624   0.019979   3.885 0.000103 ***
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Residual standard error: 0.5705 on 6199 degrees of freedom
+Multiple R-squared:  0.8895,	Adjusted R-squared:  0.8894 
+F-statistic:  9980 on 5 and 6199 DF,  p-value: < 2.2e-16
+
+
+Call:
+lm(formula = `BIG HiBM` ~ `Mkt-RF` + SMB + HML + RMW + CMA, data = dt)
+
+Residuals:
+    Min      1Q  Median      3Q     Max 
+-5.3574 -0.2497 -0.0072  0.2453  5.2891 
+
+Coefficients:
+             Estimate Std. Error t value Pr(>|t|)    
+(Intercept)  0.010993   0.004180    2.63  0.00854 ** 
+`Mkt-RF`     1.146211   0.004475  256.15  < 2e-16 ***
+SMB         -0.133466   0.008073  -16.53  < 2e-16 ***
+HML          1.123498   0.008707  129.03  < 2e-16 ***
+RMW         -0.248660   0.011178  -22.25  < 2e-16 ***
+CMA         -0.232664   0.013985  -16.64  < 2e-16 ***
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Residual standard error: 0.5174 on 15391 degrees of freedom
+Multiple R-squared:  0.8582,	Adjusted R-squared:  0.8581 
+F-statistic: 1.863e+04 on 5 and 15391 DF,  p-value: < 2.2e-16
+
+
+Call:
+lm(formula = `BIG HiBM` ~ `Mkt-RF` + SMB + HML + RMW + CMA, data = dt[which(year(dt$date) < 
+    1980), ])
+
+Residuals:
+    Min      1Q  Median      3Q     Max 
+-3.6933 -0.2399 -0.0139  0.2350  2.8804 
+
+Coefficients:
+             Estimate Std. Error t value Pr(>|t|)    
+(Intercept)  0.007877   0.006559   1.201   0.2299    
+`Mkt-RF`     1.169860   0.009949 117.582  < 2e-16 ***
+SMB         -0.087661   0.018120  -4.838 1.36e-06 ***
+HML          0.902261   0.027534  32.769  < 2e-16 ***
+RMW          0.042950   0.032485   1.322   0.1862    
+CMA         -0.056311   0.029152  -1.932   0.0535 .  
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Residual standard error: 0.4189 on 4130 degrees of freedom
+Multiple R-squared:  0.7831,	Adjusted R-squared:  0.7828 
+F-statistic:  2982 on 5 and 4130 DF,  p-value: < 2.2e-16
+
+
+Call:
+lm(formula = `BIG HiBM` ~ `Mkt-RF` + SMB + HML + RMW + CMA, data = dt[which(year(dt$date) >= 
+    1981 & year(dt$date) < 2000), ])
+
+Residuals:
+     Min       1Q   Median       3Q      Max 
+-1.90319 -0.21355 -0.00265  0.20951  2.13423 
+
+Coefficients:
+             Estimate Std. Error t value Pr(>|t|)    
+(Intercept)  0.013099   0.005556   2.358   0.0184 *  
+`Mkt-RF`     1.161599   0.009766 118.945  < 2e-16 ***
+SMB         -0.116726   0.013496  -8.649  < 2e-16 ***
+HML          1.048824   0.020583  50.955  < 2e-16 ***
+RMW         -0.013140   0.022980  -0.572   0.5675    
+CMA         -0.160966   0.023259  -6.921 5.09e-12 ***
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Residual standard error: 0.3819 on 4797 degrees of freedom
+Multiple R-squared:  0.8461,	Adjusted R-squared:  0.8459 
+F-statistic:  5273 on 5 and 4797 DF,  p-value: < 2.2e-16
+
+
+% Table created by stargazer v.5.2.3 by Marek Hlavac, Social Policy Institute. E-mail: marek.hlavac at gmail.com
+\begin{table}[!htbp] \centering 
+  \caption{} 
+  \label{} 
+\begin{tabular}{@{\extracolsep{5pt}}lccc} 
+\\[-1.8ex]\hline 
+\hline \\[-1.8ex] 
+ & \multicolumn{3}{c}{\textit{Dependent variable:}} \\ 
+\cline{2-4} 
+\\[-1.8ex] & \multicolumn{3}{c}{`SMALL LoBM`} \\ 
+\\[-1.8ex] & (1) & (2) & (3)\\ 
+\hline \\[-1.8ex] 
+ `Mkt-RF` & 1.037$^{***}$ & 1.148$^{***}$ & 0.964$^{***}$ \\ 
+  & (0.004) & (0.005) & (0.007) \\ 
+  & & & \\ 
+ SMB & 1.119$^{***}$ & 1.206$^{***}$ & 1.104$^{***}$ \\ 
+  & (0.007) & (0.008) & (0.012) \\ 
+  & & & \\ 
+ HML & $-$0.302$^{***}$ & $-$0.247$^{***}$ & $-$0.256$^{***}$ \\ 
+  & (0.008) & (0.013) & (0.011) \\ 
+  & & & \\ 
+ RMW & $-$0.378$^{***}$ & $-$0.172$^{***}$ & $-$0.514$^{***}$ \\ 
+  & (0.010) & (0.015) & (0.015) \\ 
+  & & & \\ 
+ CMA & 0.051$^{***}$ & 0.073$^{***}$ & 0.078$^{***}$ \\ 
+  & (0.012) & (0.015) & (0.020) \\ 
+  & & & \\ 
+ Constant & $-$0.003 & $-$0.001 & $-$0.011 \\ 
+  & (0.004) & (0.003) & (0.007) \\ 
+  & & & \\ 
+\hline \\[-1.8ex] 
+Observations & 15,397 & 9,192 & 6,205 \\ 
+R$^{2}$ & 0.887 & 0.896 & 0.889 \\ 
+Adjusted R$^{2}$ & 0.887 & 0.896 & 0.889 \\ 
+Residual Std. Error & 0.453 (df = 15391) & 0.331 (df = 9186) & 0.571 (df = 6199) \\ 
+F Statistic & 24,168.360$^{***}$ (df = 5; 15391) & 15,810.460$^{***}$ (df = 5; 9186) & 9,979.596$^{***}$ (df = 5; 6199) \\ 
+\hline 
+\hline \\[-1.8ex] 
+\textit{Note:}  & \multicolumn{3}{r}{$^{*}$p$<$0.1; $^{**}$p$<$0.05; $^{***}$p$<$0.01} \\ 
+\end{tabular} 
+\end{table} 

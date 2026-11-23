@@ -1,0 +1,51 @@
+
+Call:
+lm(formula = Er ~ beta_hkm + beta_m + beta_s + beta_h + beta_r + 
+    beta_c, data = beta)
+
+Residuals:
+      Min        1Q    Median        3Q       Max 
+-0.302522 -0.042943  0.005043  0.050002  0.233231 
+
+Coefficients:
+            Estimate Std. Error t value Pr(>|t|)    
+(Intercept)  0.93830    0.45925   2.043  0.05597 .  
+beta_hkm    -0.01999    0.02110  -0.947  0.35609    
+beta_m      -0.36278    0.43377  -0.836  0.41393    
+beta_s       0.18921    0.07007   2.700  0.01465 *  
+beta_h       0.27506    0.06922   3.974  0.00089 ***
+beta_r       0.30351    0.20885   1.453  0.16338    
+beta_c       0.27680    0.26707   1.036  0.31373    
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Residual standard error: 0.1205 on 18 degrees of freedom
+Multiple R-squared:  0.7217,	Adjusted R-squared:  0.629 
+F-statistic: 7.781 on 6 and 18 DF,  p-value: 0.0003096
+
+
+Call:
+lm(formula = Er ~ beta_m + beta_s + beta_h + beta_r + beta_c, 
+    data = beta)
+
+Residuals:
+      Min        1Q    Median        3Q       Max 
+-0.305610 -0.060910 -0.000261  0.065515  0.223563 
+
+Coefficients:
+            Estimate Std. Error t value Pr(>|t|)    
+(Intercept)  0.82193    0.43487   1.890 0.074101 .  
+beta_m      -0.27428    0.41779  -0.656 0.519375    
+beta_s       0.20957    0.06531   3.209 0.004621 ** 
+beta_h       0.29439    0.06484   4.540 0.000224 ***
+beta_r       0.37003    0.19202   1.927 0.069067 .  
+beta_c       0.21412    0.25465   0.841 0.410903    
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Residual standard error: 0.1195 on 19 degrees of freedom
+Multiple R-squared:  0.7107,	Adjusted R-squared:  0.6345 
+F-statistic: 9.333 on 5 and 19 DF,  p-value: 0.0001285
+
+null device 
+          1 
